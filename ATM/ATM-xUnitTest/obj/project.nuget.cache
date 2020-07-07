@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "248qvXE8rgjohVUo5uUlBG11s/hQz8UB7kyY9WmHp/YngOGJ7r6oBYogMzNgvicR2MLAyc3lX3nVCUGxwQVlLA==",
+  "dgSpecHash": "8To8KXmivWehel2N9b24sTDi0iPUkoV6b/xXtZvgptrIknRnOqxM4MceqrGQeznb73n8e34/GSVENJ9ssIHc1g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\andre\\Desktop\\code\\codeFellows\\code401\\labs\\Lab02-Unit-Testing\\ATM\\ATM-xUnitTest\\ATM-xUnitTest.csproj",
+  "projectFilePath": "C:\\Users\\andre\\desktop\\code\\codeFellows\\code401\\labs\\Lab02-ATM\\atm\\ATM-xUnitTest\\ATM-xUnitTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andre\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
