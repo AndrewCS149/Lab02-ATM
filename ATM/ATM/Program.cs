@@ -5,8 +5,12 @@ namespace ATM
 {
     public class Program
     {
-        static public decimal Balance = 1000;
+        static public decimal Balance = 1000.00M;
 
+        /// <summary>
+        /// Calls the application method which runs the ATM
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             application();
@@ -32,6 +36,10 @@ namespace ATM
             if (amount > Balance)
             {
                 Console.WriteLine("Insufficient Funds.\n");
+                return Balance;
+            } else if (amount < 0)
+            {
+                Console.WriteLine("Cannot withdraw a negative amount.\n");
                 return Balance;
             }
 
