@@ -34,6 +34,12 @@ namespace ATM
         /// <returns>The new balance</returns>
         public static decimal WithDraw(decimal amount)
         {
+            if (amount > Balance)
+            {
+                Console.WriteLine("Insufficient Funds.\n");
+                return Balance;
+            }
+
             Balance -= amount;
             Console.WriteLine($"Remaining balance: {Balance} \n");
             return Balance;
