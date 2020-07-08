@@ -10,9 +10,10 @@ namespace ATM
         static void Main(string[] args)
         {
 
-            Console.WriteLine(ViewBalance());
-            Console.WriteLine(WithDraw(500));
-            Console.WriteLine(Deposit(1000));
+            //Console.WriteLine(ViewBalance());
+            //Console.WriteLine(WithDraw(500));
+            //Console.WriteLine(Deposit(1000));
+            Interface();
 
         }
 
@@ -22,6 +23,7 @@ namespace ATM
         /// <returns>The current balance</returns>
         public static decimal ViewBalance()
         {
+            Console.WriteLine($"Current balance: {Balance}");
             return Balance;
         }
 
@@ -33,6 +35,7 @@ namespace ATM
         public static decimal WithDraw(decimal amount)
         {
             Balance -= amount;
+            Console.WriteLine($"Remaining balance: {Balance}");
             return Balance;
         }
 
@@ -44,15 +47,19 @@ namespace ATM
         public static decimal Deposit(decimal amount)
         {
             Balance += amount;
+            Console.WriteLine($"Remaining balance: {Balance}");
             return Balance;
         }
 
+        /// <summary>
+        /// ATM navigation. Displays ATM options and directs user to appropriate methods
+        /// </summary>
         public static void Interface()
         {
             bool running = true;
             while(running == true)
             {
-                Console.WriteLine("Welcome to the personal automated teller machine.");
+                Console.WriteLine("Welcome to Smith's Auto Teller.");
                 Console.WriteLine("Please select from the following options: ");
                 Console.WriteLine("1) Check Your Balance \n" +
                                   "2) Make a Withdrawal \n" +
@@ -74,8 +81,12 @@ namespace ATM
                     string strAmount = Console.ReadLine();
                     decimal amount = Convert.ToDecimal(strAmount);
                     Deposit(amount);
+                } else if (choice == "4")
+                {
+                    running = false;
                 }
             }
+                Console.WriteLine("Thank you for using Smith's Auto Teller!");
         }
     }
 }
