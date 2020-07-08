@@ -23,7 +23,7 @@ namespace ATM
         /// <returns>The current balance</returns>
         public static decimal ViewBalance()
         {
-            Console.WriteLine($"Current balance: {Balance}");
+            Console.WriteLine($"Current balance: {Balance} \n");
             return Balance;
         }
 
@@ -35,7 +35,7 @@ namespace ATM
         public static decimal WithDraw(decimal amount)
         {
             Balance -= amount;
-            Console.WriteLine($"Remaining balance: {Balance}");
+            Console.WriteLine($"Remaining balance: {Balance} \n");
             return Balance;
         }
 
@@ -47,7 +47,7 @@ namespace ATM
         public static decimal Deposit(decimal amount)
         {
             Balance += amount;
-            Console.WriteLine($"Remaining balance: {Balance}");
+            Console.WriteLine($"Remaining balance: {Balance} \n");
             return Balance;
         }
 
@@ -56,37 +56,47 @@ namespace ATM
         /// </summary>
         public static void Interface()
         {
+            Console.WriteLine("Welcome to Smith's Auto Teller. \n");
+
             bool running = true;
-            while(running == true)
+            while (running == true)
             {
-                Console.WriteLine("Welcome to Smith's Auto Teller.");
-                Console.WriteLine("Please select from the following options: ");
+                Console.WriteLine("Please select from the following options:");
                 Console.WriteLine("1) Check Your Balance \n" +
                                   "2) Make a Withdrawal \n" +
                                   "3) Make a Deposit \n" +
                                   "4) Exit");
+
                 string choice = Console.ReadLine();
 
                 if (choice == "1")
+                {
+                    Console.Clear();
                     ViewBalance();
+                }
                 else if (choice == "2")
                 {
+                    Console.Clear();
                     Console.Write("Please Enter the amount you would like to withdraw: ");
                     string strAmount = Console.ReadLine();
                     decimal amount = Convert.ToDecimal(strAmount);
                     WithDraw(amount);
-                } else if (choice == "3")
+                }
+                else if (choice == "3")
                 {
+                    Console.Clear();
                     Console.WriteLine("Please Enter the amount you would like to deposit: ");
                     string strAmount = Console.ReadLine();
                     decimal amount = Convert.ToDecimal(strAmount);
                     Deposit(amount);
-                } else if (choice == "4")
+                }
+                else if (choice == "4")
                 {
+                    Console.Clear();
                     running = false;
                 }
             }
-                Console.WriteLine("Thank you for using Smith's Auto Teller!");
+            Console.WriteLine("\nThank you for using Smith's Auto Teller!");
         }
     }
 }
