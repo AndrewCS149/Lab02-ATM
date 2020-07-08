@@ -52,6 +52,12 @@ namespace ATM
         /// <returns>The new balance</returns>
         public static decimal Deposit(decimal amount)
         {
+            if (amount < 0)
+            {
+                Console.WriteLine("Cannot deposit a negative amount.\n");
+                return Balance;
+            }
+
             Balance += amount;
             Console.WriteLine($"Remaining balance: {Balance} \n");
             return Balance;
