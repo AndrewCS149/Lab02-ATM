@@ -58,9 +58,11 @@ namespace ATM
         {
             Console.WriteLine("Welcome to Smith's Auto Teller. \n");
 
+            // loop to continuously display the menu options until the user selects "4" for exit
             bool running = true;
             while (running == true)
             {
+                // Greeting with Options
                 Console.WriteLine("Please select from the following options:");
                 Console.WriteLine("1) Check Your Balance \n" +
                                   "2) Make a Withdrawal \n" +
@@ -69,11 +71,13 @@ namespace ATM
 
                 string choice = Console.ReadLine();
 
+                // get the balance
                 if (choice == "1")
                 {
                     Console.Clear();
                     ViewBalance();
                 }
+                // WithDraw
                 else if (choice == "2")
                 {
                     Console.Clear();
@@ -82,6 +86,7 @@ namespace ATM
                     decimal amount = Convert.ToDecimal(strAmount);
                     WithDraw(amount);
                 }
+                // Deposit
                 else if (choice == "3")
                 {
                     Console.Clear();
@@ -90,10 +95,17 @@ namespace ATM
                     decimal amount = Convert.ToDecimal(strAmount);
                     Deposit(amount);
                 }
+                // Exit ATM
                 else if (choice == "4")
                 {
                     Console.Clear();
                     running = false;
+                }
+                // Invalid selection
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Invalid Selection.\n");
                 }
             }
             Console.WriteLine("\nThank you for using Smith's Auto Teller!");
