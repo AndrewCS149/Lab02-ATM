@@ -9,12 +9,7 @@ namespace ATM
 
         static void Main(string[] args)
         {
-
-            //Console.WriteLine(ViewBalance());
-            //Console.WriteLine(WithDraw(500));
-            //Console.WriteLine(Deposit(1000));
-            Interface();
-
+            application();
         }
 
         /// <summary>
@@ -66,7 +61,7 @@ namespace ATM
         /// <summary>
         /// ATM navigation. Displays ATM options and directs user to appropriate methods
         /// </summary>
-        public static void Interface()
+        public static void application()
         {
             Console.WriteLine("Welcome to Smith's Auto Teller. \n");
 
